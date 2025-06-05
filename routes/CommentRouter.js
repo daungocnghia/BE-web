@@ -40,8 +40,7 @@ router.post("/commentsOfPhoto/:photo_id", async (request, response) => {
       path: "comments.user_id",
       select: "_id first_name last_name"
     });
-
-
+    
     const addedComment = updatedPhoto.comments[updatedPhoto.comments.length - 1];
     
     // Định dạng dữ liệu trả về
@@ -62,5 +61,8 @@ router.post("/commentsOfPhoto/:photo_id", async (request, response) => {
     response.status(500).json({ message: "Lỗi máy chủ nội bộ" });
   }
 });
-
+// .findOne({ "comments._id": commentId });
+// commentObj = photo.comments.id(commentId);
+// if (commentObj.user_id.toString() !== userId) 
+  // photo.comments.pull(commentId)
 module.exports = router;

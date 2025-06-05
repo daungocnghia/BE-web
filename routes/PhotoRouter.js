@@ -54,7 +54,6 @@ router.post("/new", upload.single("photo"), async (request, response) => {
 });
 
 // GET /photosOfUser/:id
-// GET /photosOfUser/:id
 router.get("/photosOfUser/:id", async (request, response) => {
   try {
     const userId = request.params.id;
